@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 using Core;
 using Core.Interfaces.Services;
 
@@ -41,7 +42,10 @@ namespace Infrastructure.Services
 
         private class ExchangeRateApiResponse
         {
+            [JsonPropertyName("base_code")]
             public string BaseCode { get; set; } = default!;
+
+            [JsonPropertyName("rates")]
             public Dictionary<string, decimal> Rates { get; set; } = default!;
         }
 

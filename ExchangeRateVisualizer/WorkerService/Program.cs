@@ -6,7 +6,6 @@ var builder = Host.CreateApplicationBuilder(args);
 builder.Services.AddHostedService<Worker>();
 
 builder.Services.AddSingleton(builder.Configuration);
-builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<IExchangeRateService, ExchangeRateService>();
 builder.Services.AddSingleton<IDatabaseService, PostgresService>();
 builder.Services.AddSingleton<IIndexingService, ElasticService>();
